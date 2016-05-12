@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://com/company/servicioweb/servicioLogeo" xmlns:usuario="http://com/company/servicioweb/usuario"
+	targetNamespace="http://com/company/servicioweb/servicioLogeo"
+	elementFormDefault="qualified">
+
+
+	<xsd:import namespace="http://com/company/servicioweb/usuario"
+		schemaLocation="usuario.xsd" />
+
+	<xsd:element name="LogeoRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="usuario" type="xsd:string" />
+				<xsd:element name="pasword" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+	<xsd:element name="LogeoResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="usuarioValido" type="xsd:boolean" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="RolesRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="usuario" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="RolesResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="usuario" type="xsd:string" />
+				<xsd:element name="roles" type="xsd:string"	minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
